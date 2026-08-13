@@ -1,8 +1,8 @@
 # Plus One
 
-Plus One is a social event app/software that helps people meet others through shared interests and local activities. Users can create profiles, host events, join events, view attendees, and manage their participation.
+Plus One is a social event REST API that helps people meet others through shared interests and local activities. Users can create profiles, host events, join events, view attendees, and manage their participation.
 
-This project is currently under active development; currently working on backend(REST api).
+This project is currently under active development.
 
 ## Features
 
@@ -30,75 +30,55 @@ This project is currently under active development; currently working on backend
 - Maven
 - Jakarta Validation
 - Postman
-- pgAdmin 4
 
 ## API Endpoints
 
 ### Authentication
-Methods     | Endpoint              | Description
-------------------------------------------
-POST        | /api/auth/register    | Register a user
-------------------------------------------
-POST        | /api/auth/login       | Log-in
-------------------------------------------
-POST        | /api/auth/logout      | Log-out
-------------------------------------------
-GET         | /api/auth/me           | Views logged-in users
 
+| Method | Endpoint             | Description             |
+| ------ | -------------------- | ----------------------- |
+| POST   | `/api/auth/register` | Register a user         |
+| POST   | `/api/auth/login`    | Log in                  |
+| POST   | `/api/auth/logout`   | Log out                 |
+| GET    | `/api/auth/me`       | View the logged-in user |
 
 ### Profiles
 
-Methods     | Endpoint              | Description
-------------------------------------------
-POST        | /api/profiles         | creates profile
-------------------------------------------
-GET        | /api/profiles/me       | views profile
-------------------------------------------
-PUT        | /api/profiles/me       | updates profile
-
-
+| Method | Endpoint           | Description         |
+| ------ | ------------------ | ------------------- |
+| POST   | `/api/profiles`    | Create a profile    |
+| GET    | `/api/profiles/me` | View your profile   |
+| PUT    | `/api/profiles/me` | Update your profile |
 
 ### Events
 
-Methods    | Endpoint               | Description
-------------------------------------------
-POST       | /api/events            | create events
-------------------------------------------
-GET        | /api/events            | browse events
-------------------------------------------
-GET        | /api/events/{eventId}  | View one event
-------------------------------------------
-PUT        | /api/events/{eventId}  | Update a hosted event
-------------------------------------------
-DELETE     | /api/events/{eventId}  | Delete a hosted event
-------------------------------------------
-GET        | /api/events/hosted     | View events you host
-------------------------------------------
-GET        | /api/events/joined     | View events you joined
-
-
-
+| Method | Endpoint                | Description            |
+| ------ | ----------------------- | ---------------------- |
+| POST   | `/api/events`           | Create an event        |
+| GET    | `/api/events`           | Browse events          |
+| GET    | `/api/events/{eventId}` | View one event         |
+| PUT    | `/api/events/{eventId}` | Update a hosted event  |
+| DELETE | `/api/events/{eventId}` | Delete a hosted event  |
+| GET    | `/api/events/hosted`    | View events you host   |
+| GET    | `/api/events/joined`    | View events you joined |
 
 ### Attendance
 
-Methods    | Endpoint                           | Description
---------------------------------------------------------------
-POST       | /api/events/{eventId}/join         | joins event
---------------------------------------------------------------
-DELETE     | /api/events/{eventId}/join         | leave event
---------------------------------------------------------------
-GET        | /api/events/{eventId}/attendees    | view attendees
+| Method | Endpoint                          | Description    |
+| ------ | --------------------------------- | -------------- |
+| POST   | `/api/events/{eventId}/join`      | Join an event  |
+| DELETE | `/api/events/{eventId}/join`      | Leave an event |
+| GET    | `/api/events/{eventId}/attendees` | View attendees |
 
-
-## Running the Project Locally
+## Run project locally
 
 ### Prerequisites
 
 Install:
 
-* Java 17
-* PostgreSQL
-* Git
+- Java 17
+- PostgreSQL
+- Git
 
 ### 1. Clone the repository
 
@@ -152,8 +132,11 @@ On macOS or Linux:
 ./mvnw spring-boot:run
 ```
 
-The API runs at: http://localhost:8080
+The API runs at:
 
+```text
+http://localhost:8080
+```
 
 ## Project Status
 
@@ -161,14 +144,14 @@ The backend API is currently functional and tested using Postman. A frontend int
 
 ## Planned Improvements
 
-* Build the frontend user interface
-* Add event search and filtering
-* Add profile pictures
-* Add automated unit and integration tests
-* Improve authentication and production security
-* Deploy the API and PostgreSQL database
+- Build the frontend user interface
+- Add event search and filtering
+- Add profile pictures
+- Add automated unit and integration tests
+- Improve authentication and production security
+- Deploy the API and PostgreSQL database
 
 ## Author
 
-Hanson Nguyen
+Hanson Nguyen  
 Computer Science graduate
